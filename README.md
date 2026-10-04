@@ -7,6 +7,14 @@ It is a thin wrapper around [joinfs-gpx-to-jfs](https://github.com/joeherwig/joi
 IGC file is parsed here, handed to the GPX converter as a track, and the form is prefilled from the IGC header. The
 conversion itself (ground contact, attitude, gear, flaps, lights) is done by the GPX converter, so there is one engine.
 
+![The converter after dropping an IGC file: flight summary, prefilled form, Convert button](docs/screenshots/demo-loaded.png)
+
+The same in German on a dark page (the language follows the `lang` attribute or the browser):
+
+![German, dark](docs/screenshots/demo-loaded-de-dark.png)
+
+More in the [wiki sources](docs/wiki/Home.md): how to use it, embedding, IGC details, languages.
+
 ## Use
 
 ```html

@@ -126,13 +126,19 @@
 
   const xmlEsc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));
 
+  // IGC altitudes are whole metres, so every elevation is an exact multiple of 0.1 - which is what the GPX converter's
+  // "this track lost a digit" advisory looks for. A deterministic +-2 cm dither (far below the 1 m resolution of the log)
+  // keeps that advisory for genuine problems instead of firing on every IGC file.
+  const dither = (i) => (((i * 7919) % 97) - 48) / 2400;
+
   /** GPX 1.1 text for the converter: one track segment, `ele` in metres, UTC `time`. */
   function toGpx(points, name) {
     const out = ['<?xml version="1.0" encoding="UTF-8"?>',
       '<gpx version="1.1" creator="joinfs-igc-to-jfs" xmlns="http://www.topografix.com/GPX/1/1">',
       `  <trk><name>${xmlEsc(name || 'IGC flight')}</name><trkseg>`];
-    for (const p of points) {
-      out.push(`    <trkpt lat="${p.lat.toFixed(6)}" lon="${p.lon.toFixed(6)}"><ele>${p.ele}</ele><time>${new Date(p.t * 1000).toISOString()}</time></trkpt>`);
+    for (let i = 0; i < points.length; i++) {
+      const p = points[i];
+      out.push(`    <trkpt lat="${p.lat.toFixed(6)}" lon="${p.lon.toFixed(6)}"><ele>${(p.ele + dither(i)).toFixed(3)}</ele><time>${new Date(p.t * 1000).toISOString()}</time></trkpt>`);
     }
     out.push('  </trkseg></trk>', '</gpx>', '');
     return out.join('\n');

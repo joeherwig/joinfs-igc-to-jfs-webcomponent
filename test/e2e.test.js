@@ -32,3 +32,11 @@ test('an IGC flight converts to a JoinFS recording through the GPX converter', {
   assert.ok(info.maxAltM > 1500, `max altitude ${info.maxAltM}`);
   assert.ok(info.distanceKm > 1, `distance ${info.distanceKm}`);
 });
+
+test('the GPX handed to the converter does not trigger its "lost a digit" advisory', { skip: !available && 'joinfs-gpx-to-jfs not found' }, () => {
+  const { points } = parse(makeIgc(syntheticFlight({ seconds: 300 })));
+  assert.ok(points.every((p) => Number.isInteger(p.ele)), 'IGC altitudes are whole metres');
+  const parsed = Gpx2Jfs.parseGpx(toGpx(points, 'x'), Quiet);
+  assert.equal(Gpx2Jfs.elevationLooksScaled(parsed.pts), false);
+  assert.ok(Math.abs(parsed.pts[100].ele - points[100].ele) < 0.03, 'the dither stays far below the log resolution');
+});
