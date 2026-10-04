@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>joinfs-igc-to-jfs demo</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<h1>joinfs-igc-to-jfs</h1>
+<p>Drop an IGC glider log below (or <a href="sample.igc" download>download a synthetic sample</a> first). The target format
+question is asked here because the converter runs standalone; embedded in an application the host presets <code>build</code>.</p>
+<ul id="langs"><li><a href="?lang=de">Deutsch</a></li><li><a href="?lang=en">English</a></li></ul>
+
+<!-- the demo expects the two repositories side by side; serve their common parent folder -->
+<joinfs-igc-to-jfs id="igc" converter-src="../../joinfs-gpx-to-jfs-webcomponent/src/joinfs-gpx-to-jfs.js"></joinfs-igc-to-jfs>
+
+<script src="../src/joinfs-igc-to-jfs.js"></script>
+<script>
+  // ?lang= is mapped onto the element's lang attribute here; the component itself does not read the URL
+  const igc = document.getElementById('igc');
+  const lang = new URLSearchParams(location.search).get('lang');
+  if (igc && lang) igc.setAttribute('lang', lang);
+  if (igc) igc.addEventListener('converted', (e) => console.log('converted', e.detail.filename, e.detail.info));
+</script>
+</body>
+</html>

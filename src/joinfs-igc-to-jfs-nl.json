@@ -1,0 +1,21 @@
+{
+  "title": "Een IGC-vluchtlog omzetten naar een JoinFS-opname",
+  "privacy": "Het bestand wordt in je browser gelezen en nergens geüpload.",
+  "drop.prompt": "Sleep hier een IGC-bestand heen",
+  "drop.choose": "Bestand kiezen",
+  "drop.aria": "Dropzone voor een IGC-vluchtlog",
+  "loading": "Vlucht wordt gelezen…",
+  "summary.pilot": "Piloot",
+  "summary.glider": "Zweefvliegtuig",
+  "summary.date": "Datum",
+  "summary.fixes": "Posities",
+  "summary.duration": "Duur",
+  "summary.altitudePressure": "Hoogte: van de druksensor (de log bevat geen GPS-hoogte)",
+  "err.notIgc": "Dit lijkt geen IGC-bestand.",
+  "err.noDate": "De vluchtdatum (HFDTE) ontbreekt of is ongeldig.",
+  "err.noFixes": "In dit bestand zijn geen GPS-posities (B-records) gevonden.",
+  "err.fewFixes": "Slechts {n} posities gevonden; een vlucht heeft er minstens 2 nodig.",
+  "err.tooLarge": "Het bestand is te groot (limiet: {mb} MB).",
+  "err.read": "Het bestand kon niet worden gelezen.",
+  "err.noConverter": "De GPX-converter-component kon niet worden geladen ({src})."
+}

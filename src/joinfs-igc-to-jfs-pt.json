@@ -1,0 +1,21 @@
+{
+  "title": "Converter um registo de voo IGC numa gravação do JoinFS",
+  "privacy": "O ficheiro é lido no teu navegador e não é enviado para lado nenhum.",
+  "drop.prompt": "Larga aqui um ficheiro IGC",
+  "drop.choose": "Escolher um ficheiro",
+  "drop.aria": "Área para largar um registo de voo IGC",
+  "loading": "A ler o voo…",
+  "summary.pilot": "Piloto",
+  "summary.glider": "Planador",
+  "summary.date": "Data",
+  "summary.fixes": "Posições",
+  "summary.duration": "Duração",
+  "summary.altitudePressure": "Altitude: do sensor de pressão (o registo não tem altitude GPS)",
+  "err.notIgc": "Isto não parece um ficheiro IGC.",
+  "err.noDate": "A data do voo (HFDTE) falta ou é inválida.",
+  "err.noFixes": "Não foram encontradas posições GPS (registos B) neste ficheiro.",
+  "err.fewFixes": "Só foram encontradas {n} posições; um voo precisa de pelo menos 2.",
+  "err.tooLarge": "O ficheiro é demasiado grande (limite: {mb} MB).",
+  "err.read": "Não foi possível ler o ficheiro.",
+  "err.noConverter": "Não foi possível carregar o componente conversor de GPX ({src})."
+}

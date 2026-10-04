@@ -1,0 +1,16 @@
+{
+  "name": "joinfs-igc-to-jfs-webcomponent",
+  "version": "0.1.0",
+  "description": "Web component that converts IGC glider flight logs into JoinFS recordings (.jfs) in the browser, on top of joinfs-gpx-to-jfs.",
+  "keywords": ["joinfs", "igc", "jfs", "glider", "soaring", "flight-simulator", "msfs", "web-component", "custom-element"],
+  "license": "CC-BY-NC-SA-4.0",
+  "private": true,
+  "main": "src/joinfs-igc-to-jfs.js",
+  "files": ["src", "LICENSE", "NOTICE.md", "README.md"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node tools/make-sample-igc.cjs",
+    "locales": "node tools/make-locales.cjs"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Convertir un journal de vol IGC en enregistrement JoinFS",
+  "privacy": "Le fichier est lu dans ton navigateur et n’est envoyé nulle part.",
+  "drop.prompt": "Dépose un fichier IGC ici",
+  "drop.choose": "Choisir un fichier",
+  "drop.aria": "Zone de dépôt pour un journal de vol IGC",
+  "loading": "Lecture du vol…",
+  "summary.pilot": "Pilote",
+  "summary.glider": "Planeur",
+  "summary.date": "Date",
+  "summary.fixes": "Positions",
+  "summary.duration": "Durée",
+  "summary.altitudePressure": "Altitude : issue du capteur de pression (le journal ne contient pas d’altitude GPS)",
+  "err.notIgc": "Ceci ne ressemble pas à un fichier IGC.",
+  "err.noDate": "La date du vol (HFDTE) est absente ou invalide.",
+  "err.noFixes": "Aucune position GPS (enregistrements B) trouvée dans ce fichier.",
+  "err.fewFixes": "Seulement {n} positions trouvées ; un vol en demande au moins 2.",
+  "err.tooLarge": "Le fichier est trop volumineux (limite : {mb} Mo).",
+  "err.read": "Le fichier n’a pas pu être lu.",
+  "err.noConverter": "Le composant convertisseur GPX n’a pas pu être chargé ({src})."
+}

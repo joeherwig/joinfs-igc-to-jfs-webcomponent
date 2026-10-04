@@ -1,0 +1,21 @@
+{
+  "title": "Converti un registro di volo IGC in una registrazione JoinFS",
+  "privacy": "Il file viene letto nel tuo browser e non viene caricato da nessuna parte.",
+  "drop.prompt": "Trascina qui un file IGC",
+  "drop.choose": "Scegli un file",
+  "drop.aria": "Area di rilascio per un registro di volo IGC",
+  "loading": "Lettura del volo…",
+  "summary.pilot": "Pilota",
+  "summary.glider": "Aliante",
+  "summary.date": "Data",
+  "summary.fixes": "Posizioni",
+  "summary.duration": "Durata",
+  "summary.altitudePressure": "Quota: dal sensore di pressione (il registro non contiene la quota GPS)",
+  "err.notIgc": "Questo non sembra un file IGC.",
+  "err.noDate": "La data del volo (HFDTE) manca o non è valida.",
+  "err.noFixes": "Nessuna posizione GPS (record B) trovata in questo file.",
+  "err.fewFixes": "Trovate solo {n} posizioni; un volo ne richiede almeno 2.",
+  "err.tooLarge": "Il file è troppo grande (limite: {mb} MB).",
+  "err.read": "Impossibile leggere il file.",
+  "err.noConverter": "Impossibile caricare il componente convertitore GPX ({src})."
+}
